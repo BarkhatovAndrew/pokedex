@@ -9,7 +9,7 @@ interface ResponseType {
 
 const fetchPokemons = async ({ pageParam = 0 }): Promise<ResponseType> => {
   const response = await axios.get<ResponseType>(
-    `http://localhost:3000/pokemons?page=${pageParam}`
+    `${import.meta.env.VITE_API as string}/pokemons?page=${pageParam}`
   )
   return response.data
 }

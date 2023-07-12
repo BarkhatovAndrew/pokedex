@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 const fetchPokemon = async (id: number | null) => {
   if (id) {
     const response = await axios.get<Pokemon>(
-      `http://localhost:3000/pokemon/${id}`
+      `${import.meta.env.VITE_API as string}/pokemon/${id}`
     )
     return response.data
   }

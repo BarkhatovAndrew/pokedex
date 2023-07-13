@@ -1,4 +1,5 @@
 import { useScroll } from '@/hooks/use-scroll.ts'
+import { MdCatchingPokemon } from 'react-icons/md'
 
 import { Sidebar } from '@/components/sidebar.tsx'
 import { GoTopButton } from '@/components/go-top-button.tsx'
@@ -14,6 +15,10 @@ export const Layout = ({ children }) => {
         </div>
         <Sidebar />
       </div>
+      <MdCatchingPokemon
+        className="absolute rotate-45 left-[-280px] top-[-200px] -z-10 text-gray-200"
+        size={728}
+      />
       {showUpButton && <GoTopButton />}
     </>
   )

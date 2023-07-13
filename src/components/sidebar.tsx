@@ -62,7 +62,10 @@ export const Sidebar = () => {
           <div className="flex gap-2 justify-center">
             {activePokemon?.tags.map((item: PokemonTypeName) => (
               <div
-                className={clsx('px-2 rounded-md', colorTypeMap[item])}
+                className={clsx(
+                  'px-2 py-1 font-semibold text-sm rounded-md',
+                  colorTypeMap[item]
+                )}
                 key={item}
               >
                 {item}

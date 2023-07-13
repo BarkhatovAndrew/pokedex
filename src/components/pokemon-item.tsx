@@ -13,12 +13,12 @@ export const PokemonItem = (props: PokemonItemProps) => {
 
   return (
     <div
-      className="group bg-white relative mt-16 h-[150px] flex gap-2 flex-col items-center justify-center shadow-lg rounded-3xl border cursor-pointer hover:border-gray-400 transition"
+      className="group bg-white relative mt-16 h-[150px] flex gap-2 flex-col items-center justify-center shadow-lg rounded-3xl cursor-pointer hover:border-gray-300 hover:border-2 transition"
       onClick={() => setActivePokemonId(pokemon.id)}
       key={pokemon.name}
     >
       <img
-        className="absolute top-[-50px] group-hover:scale-110 transition pixelated"
+        className="absolute top-[-50px] group-hover:scale-125 transition pixelated"
         src={pokemon.smallImage}
         alt=""
       />
@@ -27,7 +27,10 @@ export const PokemonItem = (props: PokemonItemProps) => {
       <div className="flex gap-2">
         {pokemon.tags.map((item: PokemonTypeName) => (
           <div
-            className={clsx('px-2 rounded-md', colorTypeMap[item])}
+            className={clsx(
+              'px-2 py-1 font-semibold text-sm rounded-md',
+              colorTypeMap[item]
+            )}
             key={item}
           >
             {item}

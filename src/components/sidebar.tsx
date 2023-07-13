@@ -38,7 +38,7 @@ export const Sidebar = () => {
   if (isLoading) {
     return (
       <>
-        <div className="bg-white shadow rounded-t-2xl z-20 w-full h-[100dvh] col-span-4 left-1/2 lg:translate-x-0 translate-x-[-50%] fixed xl:col-span-3 lg:sticky top-[120px] flex justify-center items-center">
+        <div className="bg-white shadow rounded-t-2xl z-20 w-full h-[100dvh] col-span-4 left-1/2 translate-x-[-50%] lg:translate-x-0 fixed xl:col-span-3 lg:sticky top-[120px] flex justify-center items-center">
           <Loader size={74} />
         </div>
         <div className="h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500 lg:hidden top-0 left-0 fixed z-10" />
@@ -48,16 +48,14 @@ export const Sidebar = () => {
 
   return (
     <>
-      <div className="relative bg-white shadow overflow-y-auto rounded-t-2xl z-20 h-[100dvh] w-full fixed bottom-0 left-1/2 translate-x-[-50%] lg:translate-x-0 lg:sticky lg:block col-span-4 xl:col-span-3 top-[120px] justify-center">
-        <div className="absolute w-[160px] h-[160px] left-1/2 translate-x-[-50%] top-[-120px]">
+      <div className="bg-white shadow rounded-t-2xl z-20 h-[100dvh] w-full fixed bottom-0 left-1/2 translate-x-[-50%] lg:translate-x-0 lg:sticky lg:block col-span-4 xl:col-span-3 top-[120px] justify-center">
+        <div className="mt-5 justify-center md:w-full p-5 flex flex-col gap-y-5">
           <img
-            className="pixelated object-contain"
+            className="absolute w-[160px] h-[160px] left-1/2 translate-x-[-50%] top-[-120px] pixelated object-contain"
             src={activePokemon?.animatedImage}
             draggable={false}
             alt=""
           />
-        </div>
-        <div className="mt-5 justify-center md:w-full p-5 flex flex-col gap-y-5 pt-20">
           <p className="text-sm text-gray-500 font-semibold text-center">
             #{activePokemon?.number}
           </p>

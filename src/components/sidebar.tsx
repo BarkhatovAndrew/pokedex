@@ -37,7 +37,7 @@ export const Sidebar = () => {
 
   if (isLoading) {
     return (
-      <div className="bg-white shadow rounded-t-2xl h-screen col-span-3 sticky top-[120px] flex justify-center items-center">
+      <div className="bg-white shadow rounded-t-2xl h-screen col-span-4 xl:col-span-3 sticky top-[120px] flex justify-center items-center">
         <Loader size={74} />
       </div>
     )
@@ -45,7 +45,7 @@ export const Sidebar = () => {
 
   return (
     <>
-      <div className="bg-white shadow rounded-t-2xl z-20 h-screen w-full fixed bottom-0 left-1/2 translate-x-[-50%] lg:translate-x-0 lg:sticky lg:block col-span-4 xl:col-span-3 top-[120px] justify-center">
+      <div className="bg-white shadow rounded-t-2xl z-20 h-[100dvh] w-full fixed bottom-0 left-1/2 translate-x-[-50%] lg:translate-x-0 lg:sticky lg:block col-span-4 xl:col-span-3 top-[120px] justify-center">
         <div className="mt-5 justify-center md:w-full p-5 flex flex-col gap-y-5">
           <img
             className="absolute w-[160px] h-[160px] left-1/2 translate-x-[-50%] top-[-120px] pixelated object-contain"

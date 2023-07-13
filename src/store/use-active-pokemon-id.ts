@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 interface ActivePokemonState {
-  setActivePokemonId: (id: number) => void
+  setActivePokemonId: (id: number | null) => void
   activePokemonId: number | null
 }
 

@@ -8,8 +8,10 @@ export const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="container mx-auto p-5 pb-0 grid grid-cols-12 gap-5">
-        <div className="col-span-9">{children}</div>
+      <div className="container mx-auto p-5 pb-0 grid grid-cols-12 gap-5 relative">
+        <div className="col-span-full lg:col-span-8 xl:col-span-9">
+          {children}
+        </div>
         <Sidebar />
       </div>
       {showUpButton && <GoTopButton />}

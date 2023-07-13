@@ -16,7 +16,7 @@ export const Layout = ({ children }) => {
         <Sidebar />
       </div>
       <MdCatchingPokemon
-        className="absolute rotate-45 left-[-280px] top-[-200px] -z-10 text-gray-200"
+        className="absolute rotate-45 md:left-[-280px] md:top-[-200px] left-[-200px] top-[-240px] -z-10 max-w-full text-gray-200"
         size={728}
       />
       {showUpButton && <GoTopButton />}

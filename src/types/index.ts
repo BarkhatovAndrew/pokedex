@@ -34,11 +34,12 @@ type Stat = {
 export type Pokemon = {
   tags: PokemonTypeName[]
   animatedImage: string
+  description: string
   smallImage: string
   abilities: string
-  number: number
-  height: number
   weight: number
+  height: number
+  number: number
   stats: Stat[]
   name: string
   id: number

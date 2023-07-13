@@ -37,9 +37,12 @@ export const Sidebar = () => {
 
   if (isLoading) {
     return (
-      <div className="bg-white shadow rounded-t-2xl h-screen col-span-4 xl:col-span-3 sticky top-[120px] flex justify-center items-center">
-        <Loader size={74} />
-      </div>
+      <>
+        <div className="bg-white shadow rounded-t-2xl z-20 w-full h-[100dvh] col-span-4 left-1/2 translate-x-[-50%] fixed xl:col-span-3 lg:sticky top-[120px] flex justify-center items-center">
+          <Loader size={74} />
+        </div>
+        <div className="h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500 lg:hidden top-0 left-0 fixed z-10" />
+      </>
     )
   }
 
@@ -74,6 +77,9 @@ export const Sidebar = () => {
           </div>
 
           <p className="text-md font-bold text-center">Pokedex Entry</p>
+          <p className="text-md text-center text-gray-500">
+            {activePokemon?.description}
+          </p>
           <div className="mt-3 flex justify-between gap-x-4">
             <div className="flex flex-col text-center font-semibold w-1/2">
               <p>Height</p>
@@ -117,7 +123,7 @@ export const Sidebar = () => {
           </div>
         </div>
       </div>
-      <div className="h-screen w-screen bg-green-400 lg:hidden top-0 left-0 fixed z-10" />
+      <div className="h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500 lg:hidden top-0 left-0 fixed z-10" />
       <CloseButton onClose={() => setActivePokemonId(null)} />
     </>
   )

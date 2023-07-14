@@ -4,7 +4,7 @@ import { useActivePokemonId } from '@/store/use-active-pokemon-id.ts'
 
 export function useScrollLock() {
   const { activePokemonId } = useActivePokemonId()
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024)
 
   const updateWindowDimensions = () => {
     const newIsMobile = window.innerWidth <= 1024

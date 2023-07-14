@@ -48,14 +48,14 @@ export const Sidebar = () => {
 
   return (
     <>
-      <div className="bg-white shadow rounded-t-2xl z-20 h-[100dvh] w-full fixed bottom-0 left-1/2 translate-x-[-50%] lg:translate-x-0 lg:sticky lg:block col-span-4 xl:col-span-3 top-[120px] justify-center">
-        <div className="mt-5 justify-center md:w-full p-5 flex flex-col gap-y-5">
-          <img
-            className="absolute w-[160px] h-[160px] left-1/2 translate-x-[-50%] top-[-120px] pixelated object-contain"
-            src={activePokemon?.animatedImage}
-            draggable={false}
-            alt=""
-          />
+      <div className="bg-white shadow rounded-t-2xl z-20 lg:h-screen pb-10 w-full fixed bottom-0 left-1/2 translate-x-[-50%] lg:translate-x-0 lg:sticky col-span-4 xl:col-span-3 top-[120px] justify-center">
+        <img
+          className="fixed lg:absolute w-[160px] h-[160px] left-1/2 translate-x-[-50%] top-[-120px] pixelated object-contain"
+          src={activePokemon?.animatedImage}
+          draggable={false}
+          alt=""
+        />
+        <div className="mt-5 justify-start overflow-y-auto top-5 bottom-5 h-full lg:h-[calc(100vh-140px)] w-full p-5 flex flex-col gap-y-5">
           <p className="text-sm text-gray-500 font-semibold text-center">
             #{activePokemon?.number}
           </p>

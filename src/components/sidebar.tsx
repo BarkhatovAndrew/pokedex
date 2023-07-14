@@ -18,7 +18,7 @@ export const Sidebar = () => {
 
   if (!activePokemonId) {
     return (
-      <div className="hidden md:flex col-span-4 xl:col-span-3 bg-white shadow rounded-t-2xl h-screen sticky top-[120px] items-center justify-center">
+      <div className="sticky col-span-4 hidden h-screen items-center justify-center rounded-t-2xl bg-white shadow top-[120px] lg:flex xl:col-span-3">
         <div className="mt-10">
           <img
             src="/images/no-pokemon-selected-image.png"
@@ -26,7 +26,7 @@ export const Sidebar = () => {
             alt="no pokemon img"
             draggable={false}
           />
-          <p className="font-semibold text-gray-500 text-center">
+          <p className="text-center font-semibold text-gray-500">
             Select a Pokemon <br />
             to display here.
           </p>
@@ -38,31 +38,31 @@ export const Sidebar = () => {
   if (isLoading) {
     return (
       <>
-        <div className="bg-white shadow rounded-t-2xl z-20 w-full h-[100dvh] col-span-4 left-1/2 translate-x-[-50%] lg:translate-x-0 fixed xl:col-span-3 lg:sticky top-[120px] flex justify-center items-center">
+        <div className="fixed left-1/2 z-20 col-span-4 flex w-full items-center justify-center rounded-t-2xl bg-white shadow h-[100dvh] translate-x-[-50%] top-[120px] lg:sticky lg:translate-x-0 xl:col-span-3">
           <Loader size={74} />
         </div>
-        <div className="h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500 lg:hidden top-0 left-0 fixed z-10" />
+        <div className="fixed top-0 left-0 z-10 h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500 lg:hidden" />
       </>
     )
   }
 
   return (
     <>
-      <div className="bg-white shadow rounded-t-2xl z-20 lg:h-screen pb-10 w-full fixed bottom-0 left-1/2 translate-x-[-50%] lg:translate-x-0 lg:sticky col-span-4 xl:col-span-3 top-[120px] justify-center">
+      <div className="fixed bottom-0 left-1/2 z-20 col-span-4 w-full justify-center rounded-t-2xl bg-white pb-10 shadow translate-x-[-50%] top-[120px] lg:sticky lg:h-screen lg:translate-x-0 xl:col-span-3">
         <img
-          className="fixed lg:absolute w-[160px] h-[160px] left-1/2 translate-x-[-50%] top-[-120px] pixelated object-contain"
+          className="fixed left-1/2 object-contain w-[160px] h-[160px] translate-x-[-50%] top-[-120px] pixelated lg:absolute"
           src={activePokemon?.animatedImage}
           draggable={false}
           alt=""
         />
         <div className="mt-5 justify-start overflow-y-auto top-5 bottom-5 h-full lg:h-[calc(100vh-140px)] w-full p-5 flex flex-col gap-y-5">
-          <p className="text-sm text-gray-500 font-semibold text-center">
+          <p className="text-center text-sm font-semibold text-gray-500">
             #{activePokemon?.number}
           </p>
-          <p className="text-2xl font-bold capitalize text-center">
+          <p className="text-center text-2xl font-bold capitalize">
             {activePokemon?.name}
           </p>
-          <div className="flex gap-2 justify-center">
+          <div className="flex justify-center gap-2">
             {activePokemon?.tags.map((item: PokemonTypeName) => (
               <div
                 className={clsx(
@@ -76,39 +76,39 @@ export const Sidebar = () => {
             ))}
           </div>
 
-          <p className="text-md font-bold text-center">Pokedex Entry</p>
-          <p className="text-md text-center text-gray-500">
+          <p className="text-center font-bold text-md">Pokedex Entry</p>
+          <p className="text-center text-gray-500 text-md">
             {activePokemon?.description}
           </p>
           <div className="mt-3 flex justify-between gap-x-4">
-            <div className="flex flex-col text-center font-semibold w-1/2">
+            <div className="flex w-1/2 flex-col text-center font-semibold">
               <p>Height</p>
-              <div className="px-4 py-1 bg-gray-100 rounded-full font-normal mt-3">
+              <div className="mt-3 rounded-full bg-gray-100 px-4 py-1 font-normal">
                 {activePokemon?.height}m
               </div>
             </div>
-            <div className="flex flex-col text-center font-semibold w-1/2">
+            <div className="flex w-1/2 flex-col text-center font-semibold">
               <p>Weight</p>
-              <div className="px-4 py-1 bg-gray-100 rounded-full font-normal mt-3">
+              <div className="mt-3 rounded-full bg-gray-100 px-4 py-1 font-normal">
                 {activePokemon?.weight}kg
               </div>
             </div>
           </div>
 
-          <p className="text-md font-bold text-center">Abilities</p>
+          <p className="text-center font-bold text-md">Abilities</p>
           <div className="flex justify-between gap-x-4">
-            <div className="px-4 py-1 bg-gray-100 rounded-full font-normal w-1/2 text-center capitalize">
+            <div className="w-1/2 rounded-full bg-gray-100 px-4 py-1 text-center font-normal capitalize">
               {activePokemon?.abilities[0]}
             </div>
-            <div className="px-4 py-1 bg-gray-100 rounded-full font-normal w-1/2 text-center capitalize">
+            <div className="w-1/2 rounded-full bg-gray-100 px-4 py-1 text-center font-normal capitalize">
               {activePokemon?.abilities[1]}
             </div>
           </div>
 
-          <p className="text-md font-bold text-center">Stats</p>
-          <div className="flex gap-2 justify-between">
+          <p className="text-center font-bold text-md">Stats</p>
+          <div className="flex justify-between gap-2">
             {activePokemon?.stats.map((stat) => (
-              <div className="flex flex-col justify-center items-center p-1 w- bg-gray-100 rounded-full font-normal gap-y-1">
+              <div className="flex flex-col items-center justify-center gap-y-1 rounded-full bg-gray-100 p-1 font-normal w-">
                 <div
                   className={clsx(
                     'flex justify-center items-center rounded-full w-[28px] h-[28px] text-white text-[10px] font-bold',
@@ -117,13 +117,13 @@ export const Sidebar = () => {
                 >
                   {statTypeMap[stat.name].name}
                 </div>
-                <p className="font-bold text-[12px] mb-1">{stat.value}</p>
+                <p className="mb-1 font-bold text-[12px]">{stat.value}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div className="h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500 lg:hidden top-0 left-0 fixed z-10" />
+      <div className="fixed top-0 left-0 z-10 h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500 lg:hidden" />
       <CloseButton onClose={() => setActivePokemonId(null)} />
     </>
   )
